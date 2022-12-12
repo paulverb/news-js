@@ -5,6 +5,7 @@ export interface Source {
 
 export type Options= {
   endpoint?: string,
+  apiKey: string,
   category?: string,
 }
 
