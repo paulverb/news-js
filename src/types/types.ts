@@ -16,7 +16,7 @@ export interface Article {
 
 export interface getRespParam {
   endpoint: string;
-  options: {};
+  options?: {};
 }
 
 export type Res = {
@@ -51,6 +51,10 @@ export interface NewsResponse {
   status: string;
   sources: Source[];
   }
+
+  export type drawNewsFunction = (data: Article[] | []) => void;
+
+  export type drawSourcesFunction = (data: Source[] | []) => void;
   
 //   export interface NewsParams {
 //   source: string;

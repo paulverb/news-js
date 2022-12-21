@@ -1,4 +1,4 @@
-import {Options, getRespParam, Res} from './../../types/types';
+import {Options, getRespParam, Res, drawSourcesFunction, drawNewsFunction} from './../../types/types';
 
 class Loader {
     constructor(public baseLink: string, public options: Options) {
@@ -8,9 +8,7 @@ class Loader {
 
     getResp(
         { endpoint, options = {} }: getRespParam,
-        callback = (): void => {
-            console.error('No callback for GET response');
-        }
+        callback: drawNewsFunction | drawSourcesFunction
     ) {
         this.load('GET', endpoint, callback, options);
     }
@@ -36,7 +34,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: string, callback: Function, options = {}) {
+    load(method: string, endpoint: string, callback: drawSourcesFunction | drawNewsFunction, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
