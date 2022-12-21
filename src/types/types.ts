@@ -41,16 +41,16 @@ export interface Source {
   content: string;
   }
 
-// export interface NewsResponse {
-//   status: string;
-//   totalResults: number;
-//   articles: Article[];
-//   }
+export interface NewsResponse {
+  status: string;
+  totalResults: number;
+  articles: Article[];
+  }
   
-//   export interface SourcesResponse {
-//   status: string;
-//   sources: Source[];
-//   }
+  export interface SourcesResponse {
+  status: string;
+  sources: Source[];
+  }
   
 //   export interface NewsParams {
 //   source: string;
